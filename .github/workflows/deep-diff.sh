@@ -10,6 +10,8 @@ if [ "$#" -ne 3 ]; then
     exit 1
 fi
 
+git diff --name-only "$2" "$3" "$1"
+
 # Differences in targets of symbolic links.
 symlinks=$(find "$1" -type l)
 for l in ${symlinks}; do
